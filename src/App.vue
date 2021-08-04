@@ -17,16 +17,18 @@
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
           <li class="nav-item active">
             <router-link class="nav-link" :to="{name: 'Home'}"
-              >Cars <span class="sr-only">(current)</span></router-link
+              >Cars<span class="sr-only">(current)</span></router-link
             >
           </li>
-          <li class="nav-item">
+          <li class="nav-item active">
             <router-link class="nav-link" :to="{name: 'Jobs'}"
               >Jobs<span class="sr-only">(current)</span></router-link
             >
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Houses</a>
+          <li class="nav-item active">
+            <router-link class="nav-link" :to="{name: 'Houses'}"
+              >Houses<span class="sr-only">(current)</span></router-link
+            >
           </li>
         </ul>
       </div>
