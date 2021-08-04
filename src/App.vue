@@ -21,7 +21,7 @@
             >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Jobs</a>
+            <a class="nav-link" :to="{name: 'Jobs'}">Jobs</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Houses</a>
@@ -36,7 +36,7 @@
   <footer class="container-fluid bg-primary">
     <div class="row">
       <div class="col text-center p-3 text-light">
-        <p>Made with <img class="logo" src="./assets/logo.png" /> by Codeworks</p>
+        <p class="m-0">Made with 💖 by Holli</p>
       </div>
     </div>
   </footer>
