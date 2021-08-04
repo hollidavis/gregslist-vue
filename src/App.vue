@@ -21,7 +21,9 @@
             >
           </li>
           <li class="nav-item">
-            <a class="nav-link" :to="{name: 'Jobs'}">Jobs</a>
+            <router-link class="nav-link" :to="{name: 'Jobs'}"
+              >Jobs<span class="sr-only">(current)</span></router-link
+            >
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Houses</a>

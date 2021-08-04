@@ -2,7 +2,7 @@
   <div class="job-details-page container-fluid">
     <h1 class="text-center">🏢 Job Details 🏢</h1>
     <div class="mt-3">
-      <h3 class="line">{{ job.jobTitle }} | {{ job.company }}</h3>
+      <h3 class="line text-center">{{ job.jobTitle }} at {{ job.company }}</h3>
       <div class="text-left offset-1 lead">
         <p><b>Description:</b> {{ job.description }}</p>
         <p><b>Hours:</b> {{ job.hours }}hrs/week</p>

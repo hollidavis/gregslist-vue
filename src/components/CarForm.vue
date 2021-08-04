@@ -1,10 +1,14 @@
 <template>
   <div class="car-form">
-    <form class="d-flex justify-content-center mt-4" @submit.prevent="createCar">
+    <form
+      class="d-flex justify-content-center mt-4"
+      @submit.prevent="createCar"
+    >
       <div class="form-group mx-2">
         <input
           type="text"
           name="make"
+          v-model="state.newCar.make"
           class="form-control"
           placeholder="Make..."
           required
@@ -14,6 +18,7 @@
         <input
           type="text"
           name="model"
+          v-model="state.newCar.model"
           class="form-control"
           placeholder="Model..."
           required
@@ -23,6 +28,7 @@
         <input
           type="number"
           name="year"
+          v-model="state.newCar.year"
           class="form-control"
           placeholder="Year..."
           required
@@ -34,6 +40,7 @@
         <input
           type="number"
           name="price"
+          v-model="state.newCar.price"
           class="form-control"
           placeholder="Price..."
           required
@@ -44,6 +51,7 @@
         <input
           type="text"
           name="imgUrl"
+          v-model="state.newCar.imgUrl"
           class="form-control"
           placeholder="Url..."
         />
@@ -52,6 +60,7 @@
         <input
           type="text"
           name="description"
+          v-model="state.newCar.description"
           class="form-control"
           placeholder="Description..."
           maxlength="240"
@@ -68,10 +77,8 @@
 <script>
 import { reactive } from "@vue/reactivity";
 import { carsService } from "../services/CarsService";
-import { useRouter } from "vue-router";
 export default {
   setup() {
-    const router = useRouter();
     const state = reactive({
       newCar: {},
     });
@@ -79,10 +86,8 @@ export default {
       state,
       async createCar() {
         try {
-          const newId = await carsService.createCar(state.newCar);
-          // NOTE clears the form
+          await carsService.createCar(state.newCar);
           state.newCar = {};
-          router.push({ name: "CarDetails", params: { id: newId } });
         } catch (error) {
           console.error(error);
         }
