@@ -19,6 +19,9 @@ class HousesService {
     await sandbox.delete(`/houses/${id}`)
     AppState.houses = AppState.houses.filter(house => house.id !== id)
   }
+    async bid(house) {
+    await sandbox.put('houses/' + house.id, house)
+  }
 }
 
 export const housesService = new HousesService()

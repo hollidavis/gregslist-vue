@@ -12,7 +12,7 @@
           <p><b>Price:</b> ${{ car.price }}</p>
         </div>
         <div class="d-flex justify-content-around mt-5">
-          <button class="btn btn-success w-25">Bid</button>
+          <button class="btn btn-success w-25" @click="bid">Bid</button>
           <button class="btn btn-danger w-25" @click="destroy">Delete</button>
         </div>
       </div>
@@ -45,6 +45,14 @@ export default {
         try {
           await carsService.destroy(route.params.id);
           router.push({ name: "Home" });
+        } catch (error) {
+          console.error(error);
+        }
+      },
+      async bid() {
+        try {
+          this.car.price += 100
+          await carsService.bid(this.car)
         } catch (error) {
           console.error(error);
         }

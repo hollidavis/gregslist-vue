@@ -6,18 +6,22 @@ class CarsService {
     let res = await sandbox.get("/cars")
     AppState.cars = res.data
   }
-  async getCarById(id){
+  async getCarById(id) {
     let res = await sandbox.get(`/cars/${id}`)
     AppState.activeCar = res.data
   }
-  async createCar(car){
+  async createCar(car) {
     let res = await sandbox.post('/cars', car)
     AppState.cars.push(res.data)
     return res.data.id
   }
-  async destroy(id){
+  async destroy(id) {
     await sandbox.delete(`/cars/${id}`)
     AppState.cars = AppState.cars.filter(car => car.id !== id)
+  }
+
+  async bid(car) {
+    await sandbox.put('cars/' + car.id, car)
   }
 }
 
