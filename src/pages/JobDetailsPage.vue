@@ -40,8 +40,7 @@ export default {
       async destroy() {
         try {
           await jobsService.destroy(route.params.id);
-          //  navigate user back to home
-          router.push({ name: "Home" });
+          router.push({ name: "Jobs" });
         } catch (error) {
           console.error(error);
         }

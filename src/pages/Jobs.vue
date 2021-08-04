@@ -5,9 +5,8 @@
         <JobForm />
       </div>
     </div>
-    <div class="row">
-      <div class="col-4" v-for="j in jobs" :key="j.id">
-        <!-- Data passed through prop ':job' to child -->
+    <div class="card-columns">
+      <div class="card" v-for="j in jobs" :key="j.id">
         <JobCard :job="j"/>
       </div>
     </div>

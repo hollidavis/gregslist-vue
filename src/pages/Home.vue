@@ -5,8 +5,8 @@
         <CarForm />
       </div>
     </div>
-    <div class="row">
-      <div class="col-4" v-for="c in cars" :key="c.id">
+    <div class="card-columns">
+      <div class="card" v-for="c in cars" :key="c.id">
         <CarCard :car="c"/>
       </div>
     </div>

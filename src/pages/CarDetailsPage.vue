@@ -44,7 +44,6 @@ export default {
       async destroy() {
         try {
           await carsService.destroy(route.params.id);
-          //  navigate user back to home
           router.push({ name: "Home" });
         } catch (error) {
           console.error(error);
